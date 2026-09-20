@@ -1,0 +1,23 @@
+{
+  "name": "techi-ai-voice",
+  "version": "1.0.0",
+  "description": "Techi - Standalone AI Voice Assistant",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "voice-assistant",
+    "gemini",
+    "youtube",
+    "openrouteservice",
+    "speech-recognition"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  }
+}

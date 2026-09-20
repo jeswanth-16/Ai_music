@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #020205;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Screen 1: Start Screen */
+.start-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #020205;
+  z-index: 100;
+  cursor: pointer;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.8s;
+}
+
+.start-screen.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.start-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.start-pulse {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 242, 254, 0.9) 0%, rgba(79, 172, 254, 0.3) 60%, transparent 100%);
+  box-shadow: 0 0 40px rgba(0, 242, 254, 0.6), 0 0 80px rgba(79, 172, 254, 0.3);
+  animation: startPulse 2.4s infinite ease-in-out;
+}
+
+@keyframes startPulse {
+  0% {
+    transform: scale(0.92);
+    box-shadow: 0 0 25px rgba(0, 242, 254, 0.4), 0 0 50px rgba(79, 172, 254, 0.2);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 55px rgba(0, 242, 254, 0.8), 0 0 110px rgba(79, 172, 254, 0.5);
+  }
+  100% {
+    transform: scale(0.92);
+    box-shadow: 0 0 25px rgba(0, 242, 254, 0.4), 0 0 50px rgba(79, 172, 254, 0.2);
+  }
+}
+
+.start-text {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.start-subtext {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* Screen 2: Assistant Screen with Canvas */
+.assistant-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #020205;
+  z-index: 10;
+}
+
+#orb-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Hidden YouTube Player */
+.hidden-player {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}

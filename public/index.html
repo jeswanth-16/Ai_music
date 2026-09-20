@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Techi - AI Voice Assistant</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Screen 1: Tap to start overlay -->
+  <div id="start-screen" class="start-screen">
+    <div class="start-content">
+      <div class="start-pulse"></div>
+      <p class="start-text">Tap anywhere to wake Techi</p>
+      <p class="start-subtext">Hands-free voice assistant for EV</p>
+    </div>
+  </div>
+
+  <!-- Screen 2: Main Assistant Screen (ONLY the central animated Orb/Waveform) -->
+  <main id="assistant-screen" class="assistant-screen" aria-hidden="true">
+    <canvas id="orb-canvas"></canvas>
+  </main>
+
+  <!-- Hidden Audio-Only YouTube Player Container -->
+  <div id="youtube-player-container" class="hidden-player" aria-hidden="true">
+    <div id="yt-player"></div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="js/orb.js"></script>
+  <script src="js/speech.js"></script>
+  <script src="js/agents/music-agent.js"></script>
+  <script src="js/agents/nav-agent.js"></script>
+  <script src="js/agents/call-agent.js"></script>
+  <script src="js/agents/telemetry-agents.js"></script>
+  <script src="js/agents/main-agent.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
